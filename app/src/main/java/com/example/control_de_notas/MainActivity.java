@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,18 +14,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
     }
 
+    Programa DatosPrograma = new Programa();
 
 //Button crearAlumno = findViewById(R.id.btnCrearAlumno);
 
     public void GoToAlumnoActivity(View alumno)
     {
-        Intent intentAlumno = new Intent(this, AlumnoActivity.class);
+        Intent intentAlumno = new Intent(this, CrearAlumnoActivity.class);
         //That was the best command :_)
-
+        intentAlumno.putExtra("DatosPrograma",DatosPrograma);
         startActivity(intentAlumno);
+
+
+    }
+
+    public void GoToCrearMateriaActivity(View alumno)
+    {
+        Intent intentCrearMateria = new Intent(this, CrearMateriaActivity.class );
+        //That was the best command :_)
+        intentCrearMateria.putExtra("DatosPrograma",DatosPrograma);
+        startActivity(intentCrearMateria);
 
 
     }

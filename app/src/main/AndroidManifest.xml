@@ -13,9 +13,17 @@
         android:theme="@style/Theme.Control_De_Notas"
         tools:targetApi="31">
         <activity
-            android:name=".AlumnoActivity"
+            android:name=".GestionActividadesMateriasActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".CrearMateriaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionMateriasAlumnoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearAlumnoActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
