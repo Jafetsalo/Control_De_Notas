@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearAlumnoActivity"
+    tools:ignore="MissingDefaultResource">
+
+
+
+
+  <!-- Il fallait qu'on le mettait à l'intérieur -->
+
+
+  <TextView
+      android:id="@+id/textView4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="EDICIÓN ALUMNO"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.022" />
+
+  <Spinner
+      android:id="@+id/spinnerEstudiante"
+      android:layout_width="381dp"
+      android:layout_height="56dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.533"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.272" />
+
+  <Button
+      android:id="@+id/buttonBorrarAlumno"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Borrar Alumno"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.639" />
+
+  <Button
+      android:id="@+id/buttonModificarMatricula"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="GoToGestionMateriasAlumno"
+      android:text="Modificar Matricula"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.392" />
+
+  <Button
+      android:id="@+id/buttonGuardarCambioAlumno"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="GoToMainActivity"
+      android:text="Guardar Cambios"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.915" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

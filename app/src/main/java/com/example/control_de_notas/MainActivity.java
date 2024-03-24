@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void GoToCrearMateriaActivity(View alumno)
+    public void GoToCrearMateriaActivity(View crearMateria)
     {
         Intent intentCrearMateria = new Intent(this, CrearMateriaActivity.class );
         //That was the best command :_)
@@ -40,5 +40,40 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void GoToEditarNotasActivity(View editarNotas)
+    {
+        Intent intentEditarNotas = new Intent(this, EditarNotasActivity.class);
+        //That was the best command :_)
+        intentEditarNotas.putExtra("DatosPrograma",DatosPrograma);
+        startActivity(intentEditarNotas);
+
+
+    }
+
+    public void GoToEditarAlumnoActivity(View editarAlumno)
+    {
+        Intent intentEditarAlumno = new Intent(this, EditarAlumnoActivity.class);
+        //That was the best command :_)
+        intentEditarAlumno.putExtra("DatosPrograma",DatosPrograma);
+        startActivity(intentEditarAlumno);
+
+
+    }
+
+
+    public void GoToReporteActivity(View reporteMateria)
+    {
+        Intent intentReporteMateria = new Intent(this, ReporteActivity.class);
+        //That was the best command :_)
+        intentReporteMateria.putExtra("DatosPrograma",DatosPrograma);
+        startActivity(intentReporteMateria);
+
+
+    }
+
+
+
+
 
 }

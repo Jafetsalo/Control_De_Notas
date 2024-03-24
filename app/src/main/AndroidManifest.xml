@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Control_De_Notas"
         tools:targetApi="31">
         <activity
+            android:name=".ReporteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarAlumnoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionNotasAlumnoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarNotasActivity"
+            android:exported="false" />
+        <activity
             android:name=".GestionActividadesMateriasActivity"
             android:exported="false" />
         <activity
