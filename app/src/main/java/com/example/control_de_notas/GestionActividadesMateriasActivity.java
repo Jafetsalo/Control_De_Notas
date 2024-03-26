@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.NumberPicker;
 
-public class GestionActividadesMateriasActivity extends AppCompatActivity {
+public class GestionActividadesMateriasActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

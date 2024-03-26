@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 
-public class GestionNotasAlumnoActivity extends AppCompatActivity {
+public class GestionNotasAlumnoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

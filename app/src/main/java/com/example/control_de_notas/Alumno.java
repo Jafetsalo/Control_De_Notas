@@ -10,6 +10,16 @@ public class Alumno implements Serializable {
     BigInteger NationalID;
     Vector<Materia> Materias = new Vector<Materia>();
 
+
+    public Vector<Materia> getMateriasAlumno() {
+        return Materias;
+    }
+
+    public void setMateriasAlumno(Vector<Materia> listaMaterias) {
+        Materias = listaMaterias;
+    }
+
+
     Alumno(String nombreAlumno, Vector<Materia> materias, BigInteger nationalID)
     {
         NombreAlumno = nombreAlumno;

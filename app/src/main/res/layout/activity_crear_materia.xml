@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextCrearMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.142" />
 
     <NumberPicker
-        android:id="@+id/numberpicker_main_picker"
+        android:id="@+id/numberpicker_main_pickerMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

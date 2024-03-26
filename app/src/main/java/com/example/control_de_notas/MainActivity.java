@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity{
+
+    Programa DatosPrograma = new Programa();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
     }
 
-    Programa DatosPrograma = new Programa();
+
+
 
 //Button crearAlumno = findViewById(R.id.btnCrearAlumno);
 

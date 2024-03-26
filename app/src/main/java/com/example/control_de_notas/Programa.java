@@ -37,7 +37,7 @@ public class Programa implements Serializable {
 
     Programa()
     {
-        ListaMaterias = null;
-        ListaEstudiantes = null;
+        ListaMaterias = new Vector<Materia>();
+        ListaEstudiantes = new Vector<Alumno>();
     }
 }
