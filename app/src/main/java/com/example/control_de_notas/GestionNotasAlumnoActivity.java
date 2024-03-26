@@ -14,11 +14,9 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gestion_notas_alumno);
 
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
 
     }
 
-    Programa DatosPrograma;
 
 
     public void GoToMainActivity(View main)

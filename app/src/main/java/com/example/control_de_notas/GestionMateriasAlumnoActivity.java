@@ -13,10 +13,7 @@ public class GestionMateriasAlumnoActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materias);
 
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
-
     }
-    Programa DatosPrograma;
 
     public void GoToMainActivity(View main)
     {

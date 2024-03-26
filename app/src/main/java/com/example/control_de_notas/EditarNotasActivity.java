@@ -13,11 +13,8 @@ public class EditarNotasActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_notas);
 
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
-
     }
 
-    Programa DatosPrograma;
 
     public void GoToGestionNotasAlumnoActivity(View gestionNotas)
     {

@@ -9,14 +9,13 @@ import android.view.View;
 
 public class MainActivity extends BaseActivity{
 
-    Programa DatosPrograma = new Programa();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
+
     }
 
 

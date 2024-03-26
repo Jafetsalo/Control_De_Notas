@@ -1,6 +1,6 @@
 package com.example.control_de_notas;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,20 +9,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
-import java.util.Date;
 import java.util.Vector;
 
 public class CrearMateriaActivity extends BaseActivity {
 
-    Programa DatosPrograma = new Programa();
+
     NumberPicker picker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_materia);
-
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
 
         picker = (NumberPicker)findViewById(R.id.numberpicker_main_pickerMateria);
         picker.setMaxValue(10);
@@ -39,10 +36,7 @@ public class CrearMateriaActivity extends BaseActivity {
             return;
         }
 
-        int numeroNotasMateria = picker.getValue();
-        String nombreMateria = ((EditText)findViewById(R.id.editTextCrearMateria)).getText().toString();
-
-        Materia nuevaMateria = new Materia(new Vector<Nota>(),nombreMateria,numeroNotasMateria);
+        Materia nuevaMateria = crearMateria();
 
         if(!materiaRepetida(nuevaMateria))
         {
@@ -56,15 +50,24 @@ public class CrearMateriaActivity extends BaseActivity {
         }
         else {ShowToast("Materia con ese nombre ya existe.");}
 
+    }
 
-        //Ver si materia está repetida o no
-        //Guardarla en Vector
-        //Lamar a nuevo Activity
+    @NonNull
+    private Materia crearMateria() {
+        int numeroNotasMateria = (picker.getValue() +1);
+        String nombreMateria = ((EditText)findViewById(R.id.editTextCrearMateria)).getText().toString();
+        Vector<Nota> NotasMateria = new Vector<>();
 
+        for (int x = 0; x<numeroNotasMateria; x++)
+        {
+            if (x == 1) {Nota nuevaNota = new Nota(1,1/(numeroNotasMateria-1),("NO ASIGNADO"));}
+            Nota nuevaNota = new Nota(1,1/(numeroNotasMateria-1),("Nota # "+x));
+            // Crear notas para la materia
+            NotasMateria.add(nuevaNota);
+        }
 
-
-
-
+        Materia nuevaMateria = new Materia(NotasMateria,nombreMateria,numeroNotasMateria);
+        return nuevaMateria;
     }
 
     public void GoToMainActivity(View materia)
@@ -75,10 +78,7 @@ public class CrearMateriaActivity extends BaseActivity {
             return;
         }
 
-        int numeroNotasMateria = picker.getValue();
-        String nombreMateria = ((EditText)findViewById(R.id.editTextCrearMateria)).getText().toString();
-
-        Materia nuevaMateria = new Materia(new Vector<Nota>(),nombreMateria,numeroNotasMateria);
+        Materia nuevaMateria = crearMateria();
 
         if(!materiaRepetida(nuevaMateria))
         {

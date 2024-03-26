@@ -13,15 +13,12 @@ public class GestionActividadesMateriasActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gestion_actividades_materias);
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
 
 
         picker = (NumberPicker)findViewById(R.id.numberpicker_main_picker);
         picker.setMaxValue(100);
         picker.setMinValue(1);
     }
-
-    Programa DatosPrograma = new Programa();
 
     NumberPicker picker;
 

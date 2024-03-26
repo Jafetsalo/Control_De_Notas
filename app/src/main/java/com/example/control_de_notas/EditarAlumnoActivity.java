@@ -12,11 +12,10 @@ public class EditarAlumnoActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_alumno);
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
 
     }
 
-    Programa DatosPrograma;
+
 
 
     public void GoToGestionMateriasAlumno(View gestionMateriasAlumno)

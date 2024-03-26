@@ -12,11 +12,9 @@ public class ReporteActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reporte);
-        DatosPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
 
     }
 
-    Programa DatosPrograma;
 
 
     public void GoToMainActivity(View main)

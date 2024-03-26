@@ -14,10 +14,10 @@ import android.widget.Toast;
 import java.math.BigInteger;
 import java.util.Vector;
 
-public class CrearAlumnoActivity extends AppCompatActivity {
+public class CrearAlumnoActivity extends BaseActivity {
 
 
-    Programa DatosPrograma =  new Programa();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +26,6 @@ public class CrearAlumnoActivity extends AppCompatActivity {
 
         //Catch DatosPrograma
 
-        Programa passedPrograma = (Programa)getIntent().getSerializableExtra("DatosPrograma");
-        if (passedPrograma != null) {
-            DatosPrograma = passedPrograma;
-        }
 
     }
 
