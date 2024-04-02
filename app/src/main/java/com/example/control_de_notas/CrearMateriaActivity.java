@@ -60,14 +60,18 @@ public class CrearMateriaActivity extends BaseActivity {
 
         for (int x = 0; x<numeroNotasMateria; x++)
         {
-            if (x == 1) {Nota nuevaNota = new Nota(1,1/(numeroNotasMateria-1),("NO ASIGNADO"));}
-            Nota nuevaNota = new Nota(1,1/(numeroNotasMateria-1),("Nota # "+x));
+            Nota nuevaNota;
+
+            if (x == (numeroNotasMateria-1))
+            {nuevaNota = new Nota(1,0,("NO ASIGNADO"));}
+            else
+            {nuevaNota = new Nota(1,1f/(numeroNotasMateria-1f),("Nota # "+(x+1)));}
+
             // Crear notas para la materia
             NotasMateria.add(nuevaNota);
         }
 
-        Materia nuevaMateria = new Materia(NotasMateria,nombreMateria,numeroNotasMateria);
-        return nuevaMateria;
+        return new Materia(NotasMateria,nombreMateria,(numeroNotasMateria-1));
     }
 
     public void GoToMainActivity(View materia)

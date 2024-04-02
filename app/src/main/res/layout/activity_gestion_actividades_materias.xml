@@ -8,7 +8,7 @@
 
 
     <Spinner
-        android:id="@+id/spinnerEstudiante"
+        android:id="@+id/spinnerActividadesMateria"
         android:layout_width="381dp"
         android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.668" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewNombreMateriaAEditarActividades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NOMBRE MATERIA:"
@@ -94,13 +94,25 @@
         android:id="@+id/buttonGuardarNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="GoToMainActivity"
+        android:onClick="GuardarNotaActividad"
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
+        app:layout_constraintVertical_bias="0.849" />
+
+    <Button
+        android:id="@+id/buttonMenuPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="GoToMainActivity"
+        android:text="A Menú Principal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
