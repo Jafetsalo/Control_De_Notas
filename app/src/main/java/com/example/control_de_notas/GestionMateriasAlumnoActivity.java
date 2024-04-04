@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,9 +22,27 @@ public class GestionMateriasAlumnoActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materias);
 
+        Alumno passedAlumno = (Alumno)getIntent().getSerializableExtra("AlumnoCambiar");
+        if (passedAlumno != null)
+        {
+            alumnoAEditar = passedAlumno;
+        }
+        else if(!DatosPrograma.ListaEstudiantes.isEmpty())
+        {
+            alumnoAEditar = buscarAlumnoNuevo();
+        }
+        else
+        {
+            alumnoAEditar = new Alumno();
+            Button botonMatricular = findViewById(R.id.buttonMatricularMateria);
+            botonMatricular.setClickable(false);
 
+            Button botonCancelar = findViewById(R.id.buttonCancelarMateria);
+            botonCancelar.setClickable(false);
+            return;
+        }
         //Aquí *
-        alumnoAEditar = buscarAlumnoNuevo();
+
         //*TO DO: Pendiente asignar Alumno a editar según si viene de Crear o Editar Alumno
 
         spinnerMateriaAlumno = (Spinner)findViewById(R.id.spinnerMateriasAlumno);
@@ -49,7 +68,7 @@ public class GestionMateriasAlumnoActivity extends BaseActivity {
 
         if (materiaVector.isEmpty())
         {
-            ShowToast("No es posible cancelar materias. No hay ninguna registrada");
+            ShowToast("No es posible modificar materias. No hay ninguna registrada");
             ArrayAdapter<String> emptyAdapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, new String[] {});
             spinnerToLoad.setAdapter(emptyAdapter);
             return;
@@ -79,11 +98,33 @@ public class GestionMateriasAlumnoActivity extends BaseActivity {
 
     public Alumno buscarAlumnoNuevo()
     {
-        return DatosPrograma.ListaEstudiantes.lastElement();
+            return DatosPrograma.ListaEstudiantes.lastElement();
     }
 
     public void GoToMainActivity(View main)
     {
+        //Hacer que alumno modificado se asigne a DatosPrograma alumno sin modificar - escribir los cambios
+        //Para hacerlo nos servimos del NationalID
+        //Verificar que DatosPrograma ni AlumnoModificado estén vacíos
+        if (DatosPrograma.ListaEstudiantes.isEmpty())
+        {
+            ShowToast("No es posible Guardar Cambios. No hay ninguno registrado");
+        }
+        else
+        {
+            for (Alumno estudiante: DatosPrograma.ListaEstudiantes)
+            {
+                if (estudiante.NationalID.equals(alumnoAEditar.NationalID))
+                {
+                    int indiceEstudiante = DatosPrograma.ListaEstudiantes.indexOf(estudiante);
+                    DatosPrograma.ListaEstudiantes.removeElement(estudiante);
+                    DatosPrograma.ListaEstudiantes.add(indiceEstudiante, alumnoAEditar);
+                    break;
+                }
+            }
+        }
+
+
         Intent intentMateria = new Intent(this, MainActivity.class);
         //That was the best command :_)
         intentMateria.putExtra("DatosPrograma",DatosPrograma);

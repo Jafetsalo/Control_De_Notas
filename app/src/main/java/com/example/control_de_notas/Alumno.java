@@ -28,5 +28,13 @@ public class Alumno implements Serializable {
 
     }
 
+    Alumno()
+    {
+        NombreAlumno = "";
+        Materias = new Vector<Materia>();
+        NationalID = new BigInteger("0");
+
+    }
+
 
 }
