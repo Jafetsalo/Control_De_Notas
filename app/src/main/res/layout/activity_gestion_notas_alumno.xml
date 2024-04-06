@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textViewNombreMateriaEstudiante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textViewNombreEstudiante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.317" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/editTextNotaEstudiante"
         android:layout_width="209dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.664" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textViewCalificacionObtenida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calificación obtenida:"
@@ -90,14 +90,27 @@
         android:id="@+id/buttonGuardarCalificacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="GoToMainActivity"
+        android:onClick="GuardarCalificacion"
         android:text="Guardar Calificación"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintVertical_bias="0.773" />
+
+    <Button
+        android:id="@+id/buttonMenuPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="GoToMainActivity"
+        android:text="A Menú Principal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

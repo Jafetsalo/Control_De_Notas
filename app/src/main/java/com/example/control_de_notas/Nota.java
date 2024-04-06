@@ -9,6 +9,10 @@ public class Nota implements Serializable {
     float Valor;
     float Peso;
 
+    public String getNombreActividad() {
+        return NombreActividad;
+    }
+
     String NombreActividad;
 
     Nota(float valor, float peso, String nombreActividad)
@@ -17,6 +21,8 @@ public class Nota implements Serializable {
         this.Peso = peso;
         this.NombreActividad = nombreActividad;
     }
+
+
 }
 
 //Seems to be done!
