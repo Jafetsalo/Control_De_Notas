@@ -35,6 +35,8 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
         materiaSeleccionada = (Materia)getIntent().getSerializableExtra("MateriaSeleccionada");
 
         if (estudianteSeleccionado != null && materiaSeleccionada != null) {
+            materiaSeleccionada = new Materia(materiaSeleccionada.Notas,materiaSeleccionada.NombreMateria,materiaSeleccionada.NumeroNotas);
+
         textViewNombreEstudiante.setText("Alumno: " + estudianteSeleccionado.NombreAlumno);
         textViewMateriaEstudiante.setText("Materia:" + materiaSeleccionada.NombreMateria);
 
@@ -83,15 +85,17 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
             ShowToast("Actividad no seleccionada o vacía");
             return;
         }
-
-        DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.get(indice_materia).Notas.get(spinnerNota.getSelectedItemPosition()).Valor = Float.parseFloat(editTextNotaEstudiante.getText().toString());
+        materiaSeleccionada.Notas.get(spinnerNota.getSelectedItemPosition()).Valor=Float.parseFloat(editTextNotaEstudiante.getText().toString()); //Asignar a instancia
+        DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.remove(indice_materia);//Remover materia vieja
+        DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.add(materiaSeleccionada);//Añadir materia nueva con calificación
+        //DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.get(indice_materia).Notas.get(spinnerNota.getSelectedItemPosition()).Valor = Float.parseFloat(editTextNotaEstudiante.getText().toString());
 
         ShowToast("Nota actualizada correctamente: " +
                 materiaSeleccionada.NombreMateria + " :" + materiaSeleccionada.Notas.get(spinnerNota.getSelectedItemPosition()).NombreActividad + " - "+ Float.parseFloat(editTextNotaEstudiante.getText().toString()));
 
-        Nota notaEstudiante = DatosPrograma.ListaEstudiantes.elementAt(indice_estudiante).Materias.elementAt(indice_materia).Notas.elementAt(spinnerNota.getSelectedItemPosition());
+        Nota notaEstudiante = materiaSeleccionada.Notas.elementAt(spinnerNota.getSelectedItemPosition());
         textViewCalificacionObtenida.setText("Calificación obtenida: "+ notaEstudiante.Valor +" (" + notaEstudiante.Peso * 100f +"%)");
-        recargarSpinners();
+        //recargarSpinners();
     }
 
 
@@ -124,11 +128,11 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
 
     public void recargarSpinners()
     {
-        cargarSpinnerActividades(DatosPrograma.ListaEstudiantes.elementAt(indice_estudiante).Materias.elementAt(indice_materia));
+        cargarSpinnerActividades(materiaSeleccionada);
 
-        if (DatosPrograma.ListaEstudiantes.elementAt(indice_estudiante).Materias.elementAt(indice_materia).Notas.isEmpty())
+        if (materiaSeleccionada.Notas.isEmpty())
         {
-            //ShowToast("No es posible editar Alumnos. No hay ninguno registrado");
+            //ShowToast("No es posible editar Notas. No hay ninguna registrada");
         }
         else {spinnerNota.setSelection(0);}
 
@@ -148,7 +152,7 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
 
             //Cargar calificación de estudiante en editText
             //int indiceMateria = estudianteSeleccionado.Materias.indexOf(materiaSeleccionada);
-            Nota notaEstudiante = DatosPrograma.ListaEstudiantes.elementAt(indice_estudiante).Materias.elementAt(indice_materia).Notas.elementAt(position);
+            Nota notaEstudiante = materiaSeleccionada.Notas.elementAt(position);
 
 
             textViewCalificacionObtenida.setText("Calificación obtenida: "+ notaEstudiante.Valor +" (" + notaEstudiante.Peso * 100f +"%)");
