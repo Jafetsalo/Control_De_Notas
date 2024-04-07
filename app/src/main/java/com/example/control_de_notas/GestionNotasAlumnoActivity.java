@@ -87,7 +87,7 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
         }
         materiaSeleccionada.Notas.get(spinnerNota.getSelectedItemPosition()).Valor=Float.parseFloat(editTextNotaEstudiante.getText().toString()); //Asignar a instancia
         DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.remove(indice_materia);//Remover materia vieja
-        DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.add(materiaSeleccionada);//Añadir materia nueva con calificación
+        DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.add(indice_materia,materiaSeleccionada);//Añadir materia nueva con calificación
         //DatosPrograma.ListaEstudiantes.get(indice_estudiante).Materias.get(indice_materia).Notas.get(spinnerNota.getSelectedItemPosition()).Valor = Float.parseFloat(editTextNotaEstudiante.getText().toString());
 
         ShowToast("Nota actualizada correctamente: " +
