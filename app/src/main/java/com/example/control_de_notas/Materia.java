@@ -7,6 +7,10 @@ public class Materia implements Serializable {
 
     Vector<Nota> Notas = new Vector<Nota>();
 
+    public String getNombreMateria() {
+        return NombreMateria;
+    }
+
     String NombreMateria;
 
     int NumeroNotas;

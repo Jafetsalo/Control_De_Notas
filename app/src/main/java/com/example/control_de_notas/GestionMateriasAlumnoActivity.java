@@ -139,7 +139,9 @@ public class GestionMateriasAlumnoActivity extends BaseActivity {
         } else if (isMateriaAlreadyMatriculated(indiceMateria)) {
             ShowToast("No es posible MATRICULAR materias. Ya está matriculada");
         } else {
-            alumnoAEditar.Materias.add(DatosPrograma.ListaMaterias.elementAt(indiceMateria));
+            Materia asignatura = DatosPrograma.ListaMaterias.elementAt(indiceMateria);
+            alumnoAEditar.Materias.add(new Materia(asignatura.Notas,asignatura.NombreMateria, asignatura.NumeroNotas));
+            //alumnoAEditar.Materias.add(DatosPrograma.ListaMaterias.elementAt(indiceMateria));
             ShowToast("Materia: "+ DatosPrograma.ListaMaterias.elementAt(indiceMateria).NombreMateria + " matriculada correctamente");
         }
 
@@ -148,7 +150,7 @@ public class GestionMateriasAlumnoActivity extends BaseActivity {
 
     private boolean isMateriaAlreadyMatriculated(int indiceMateria) {
         for (Materia curso : alumnoAEditar.Materias) {
-            if (curso.equals(DatosPrograma.ListaMaterias.elementAt(indiceMateria))) {
+            if (curso.NombreMateria.equals(DatosPrograma.ListaMaterias.elementAt(indiceMateria).NombreMateria)) {
                 return true;
             }
         }

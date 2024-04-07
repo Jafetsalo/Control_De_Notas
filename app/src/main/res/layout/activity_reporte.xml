@@ -33,6 +33,7 @@
         android:id="@+id/buttonGenerarReporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="GenerarReporteMateria"
         android:text="Generar Reportes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +43,7 @@
         app:layout_constraintVertical_bias="0.595" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textViewEstudiantesAprobados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estudiantes Aprobados:"
@@ -54,7 +55,7 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textViewEstudiantesReprobados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estudiantes Reprobados:"

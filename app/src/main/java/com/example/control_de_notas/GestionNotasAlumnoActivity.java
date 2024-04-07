@@ -37,6 +37,9 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
         if (estudianteSeleccionado != null && materiaSeleccionada != null) {
         textViewNombreEstudiante.setText("Alumno: " + estudianteSeleccionado.NombreAlumno);
         textViewMateriaEstudiante.setText("Materia:" + materiaSeleccionada.NombreMateria);
+
+        indice_materia = findIndexMateria(estudianteSeleccionado,materiaSeleccionada);
+        indice_estudiante = findIndexEstudiante(estudianteSeleccionado);
         
         recargarSpinners();
         } else {
@@ -159,6 +162,29 @@ public class GestionNotasAlumnoActivity extends BaseActivity {
         }
     };
 
+    public int findIndexEstudiante(Alumno estudianteSeleccionado)
+    {
+        for (Alumno estudiante: DatosPrograma.ListaEstudiantes)
+        {
+         if(estudiante.NationalID.equals(estudianteSeleccionado.NationalID))
+         {
+             return DatosPrograma.ListaEstudiantes.indexOf(estudiante);
+         }
+        }
+        return (-1);
+    }
+
+    public int findIndexMateria(Alumno estudianteSeleccionado, Materia materiaSeleccionada)
+    {
+        for (Materia asignatura: estudianteSeleccionado.Materias)
+        {
+            if(asignatura.NombreMateria.equals(materiaSeleccionada.NombreMateria))
+            {
+                return estudianteSeleccionado.Materias.indexOf(asignatura);
+            }
+        }
+        return (-1);
+    }
 
 
 }
